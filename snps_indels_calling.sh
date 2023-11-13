@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Input VCF file
-input_vcf="test.vcf.gz"
+input_vcf="*.vcf.gz"
 # Output files for indels and SNPs
 output_indels="indels.vcf.gz"
 output_snps="snps.vcf.gz"
