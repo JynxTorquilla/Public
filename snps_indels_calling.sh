@@ -78,7 +78,7 @@ bcftools norm -f /mnt/ssd/data/GRCh38/GRCh38.fa ./tmp/rnmd-chr.snps.vcf.gz -Oz -
 bcftools norm -f /mnt/ssd/data/GRCh38/GRCh38.fa ./tmp/rnmd-chr.indels.vcf.gz -Oz -o ./tmp/norm_indels.vcf.gz -c s
 
 # Create VCF files for indels and SNPs within the range
-bcftools filter --IndelGap ${range} ./tmp/norm_snps.vcf.gz -Oz -o ./output/norm.filt-snps.vcf.gz
-bcftools filter --SnpGap ${range} ./tmp/norm_indels.vcf.gz -Oz -o ./output/norm.filt-indels.vcf.gz
+bcftools filter --IndelGap ${range} ./tmp/norm_indels.vcf.gz -Oz -o ./output/norm.filt-indels.vcf.gz
+bcftools filter --SnpGap ${range} ./tmp/norm_snps.vcf.gz -Oz -o ./output/norm.filt-snps.vcf.gz
 
 echo "Indels and SNPs extracted, normalized, and saved in separate VCF files."
