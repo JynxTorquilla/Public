@@ -60,6 +60,7 @@ chr44 44
 chr45 45
 chr46 46
 chr47 47
+chrY Y
 chrX X
 chrMT MT" > mapping.txt
 
