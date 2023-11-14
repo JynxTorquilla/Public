@@ -74,8 +74,8 @@ bcftools annotate --rename-chr mapping.txt ./tmp/$output_snps -Oz -o ./tmp/rnmd-
 bcftools annotate --rename-chr mapping.txt ./tmp/$output_indels -Oz -o ./tmp/rnmd-chr.indels.vcf.gz
 
 # normalization
-bcftools norm -f Homo_sapiens.GRCh38.dna.chromosome.giaborder.fa ./tmp/rnmd-chr.snps.vcf.gz -Oz -o ./tmp/norm_snps.vcf.gz -c s
-bcftools norm -f Homo_sapiens.GRCh38.dna.chromosome.giaborder.fa ./tmp/rnmd-chr.indels.vcf.gz -Oz -o ./tmp/norm_indels.vcf.gz -c s
+bcftools norm -f *.fa ./tmp/rnmd-chr.snps.vcf.gz -Oz -o ./tmp/norm_snps.vcf.gz -c s
+bcftools norm -f *.fa ./tmp/rnmd-chr.indels.vcf.gz -Oz -o ./tmp/norm_indels.vcf.gz -c s
 
 # Create VCF files for indels and SNPs within the range
 bcftools filter --IndelGap ${range} ./tmp/norm_indels.vcf.gz -Oz -o ./output/norm.filt-indels.vcf.gz
